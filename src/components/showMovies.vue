@@ -8,8 +8,8 @@
             </div>
       
             <div style="margin: 0% 5% 0% 10%">
-                <button @click="showCard($event)" style="width: 80px;height: 300px ; float: left; background-color: rgba(0, 0, 0, 0);color: white; border: 0px; margin: 1% 1% 0% 1%;" v-for="movie in movieSearch" :key="movie.id" v-bind:id='movie.id'>
-                    <img :src="movie.poster" style="max-width: 100%;box-sizing: border-box; height: auto;">
+                <button @click="showCard($event)" style="width: 80px;height: 300px ; float: left; background-color: rgba(0, 0, 0, 0);color: white; border: 0px; margin: 1% 1% 0% 1%;" v-for="movie in movieSearch" :key="movie.id" :id='movie.id'>
+                    <img :src="movie.posterUrl" style="max-width: 100%;box-sizing: border-box; height: auto;">
                     {{movie.title}}
                 </button>
             </div>

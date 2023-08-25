@@ -13,20 +13,22 @@
 
 <script>
 
-import axios from 'axios'
+// import axios from 'axios'
 import showMovies from '../components/showMovies.vue';
+import {fetchLatestMovies} from '../api.js' 
 export default {
     name: 'home',
-    mounted() {
-        axios({
-          method: "GET",
-          "url": "assets/json/movies.json"
-        }).then(response => {
-          this.movies = JSON.parse(JSON.stringify(response.data));
-        }, error => {
-          // eslint-disable-next-line
-          console.error(error);
-        });
+    async created() {
+        // axios({
+        //   method: "GET",
+        //   "url": "assets/json/movies.json"
+        // }).then(response => {
+        //   this.movies = JSON.parse(JSON.stringify(response.data));
+        // }, error => {
+        //   // eslint-disable-next-line
+        //   console.error(error);
+        // });
+        this.movies = await fetchLatestMovies();
     },
     data() {
         return {
